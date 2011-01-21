@@ -968,7 +968,9 @@ class apachesolr_views_query extends views_plugin_query implements Drupal_Solr_Q
         $query_filters[] = "$type_string:" . $definition['value'];
       }
     }
-    $query_filters[] = "entity:" . $this->sql_base_table;
+    if (false) {
+      $query_filters[] = "entity:" . $this->sql_base_table;
+    }
     return $query_filters;
   }
 }
