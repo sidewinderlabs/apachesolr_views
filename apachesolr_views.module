@@ -1,0 +1,44 @@
+<?php
+// $Id: apachesolr_views.module,v 1.6 2010/05/19 18:47:29 scottreynolds Exp $
+
+/**
+ * @file
+ * Provides Views Implementation for the ApacheSolr Search Integration project
+ * drupal.org/project/apachesolr
+ */
+
+/**
+ * Implementation of hook_views_api().
+ */
+function apachesolr_views_views_api() {
+  return array('api' => '3.0-dev');
+}
+
+/**
+ * Implementation of hook_theme().
+ */
+function apachesolr_views_theme() {
+  return array(
+    'apachesolr_views_term_titles' => array('term_names' => array()),
+  );
+}
+
+/**
+ * theme function for the term titles
+ */
+function theme_apachesolr_views_term_titles($term_names) {
+  return "<span>" . implode('</span> + <span>', $term_names) . "</span>";
+}
+
+/**
+ * Implementation of hook_apachesolr_entities().
+ * This is done for apachesolr_search module.
+ */
+function apachesolr_search_apachesolr_entities() {
+  return array(
+    'node' => array(
+      'name' => 'Node',
+      'base_field' => 'nid',
+    ),
+  );
+}

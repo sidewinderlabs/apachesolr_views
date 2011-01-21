@@ -1,0 +1,15 @@
+; $Id: apachesolr_views.info,v 1.2 2009/05/12 18:07:43 scottreynolds Exp $
+name = Apache Solr Views Integration
+description = Provides Views Integration with Views
+dependencies[] = apachesolr
+dependencies[] = views
+package = Apache Solr
+core = "6.x"
+php = 5.1.4
+
+; Information added by drupal.org packaging script on 2010-12-16
+version = "6.x-1.x-dev"
+core = "6.x"
+project = "apachesolr_views"
+datestamp = "1292457907"
+
