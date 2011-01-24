@@ -693,7 +693,11 @@ class apachesolr_views_query extends views_plugin_query implements Drupal_Solr_Q
     // we use field instead of real_field
     // because we want these specific ones defined in
     // apachesolr_views.views.inc
-    return (in_array($argument->field, $facet_arguments));
+    if ($facet_arguments) {
+      return (in_array($argument->field, $facet_arguments));
+    } else {
+      return false;
+    }
   }
     
   /**
