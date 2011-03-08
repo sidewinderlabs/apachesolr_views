@@ -804,6 +804,20 @@ class apachesolr_views_query extends views_plugin_query implements Drupal_Solr_Q
   }
   
   /**
+   * Return info to base the uniqueness of the result on.
+   *
+   * @return $cache_info
+   *   containing the query and any solr params
+   */ 
+  public function get_cache_info() {
+
+    return array(
+      'query' => $this->_query,
+      'apachesolr_params' => $this->_params,
+    );    
+  }
+  
+  /**
    * add a subquery to the current query
    */
   function add_subquery(Drupal_Solr_Query_Interface $query, $fq_operator = 'OR', $q_operator = 'AND') {
